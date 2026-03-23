@@ -21,7 +21,7 @@ A simple web app that displays random cat images with custom messages.
 
 Try these: `cute`, `orange`, `fluffy`, `grumpy`, `lazy`, `white`, `black`
 
-## Setup
+## Setup(Which will be available after some time)
 
 Just clone the repo and open `index.html` in your browser. That's it!
 
