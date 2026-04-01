@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐱 Cat Quote App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🐱 Cat Quote App</h1>
+            <p class="subtitle">Create custom cat images with your messages</p>
+        </header>
+
+        <section class="form-section">
+            <div class="form-container">
+                <form id="catForm">
+                    <div class="form-group">
+                        <label for="catTag">Cat Tag <span class="required">*</span></label>
+                        <input 
+                            type="text" 
+                            id="catTag" 
+                            name="catTag" 
+                            placeholder="e.g., cute, orange, fluffy, grumpy"
+                            required
+                        >
+                        <small class="hint">Try: cute, orange, fluffy, grumpy, lazy, white, black</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="catMessage">Custom Message <span class="required">*</span></label>
+                        <input 
+                            type="text" 
+                            id="catMessage" 
+                            name="catMessage" 
+                            placeholder="What should the cat say?"
+                            maxlength="100"
+                            required
+                        >
+                        <small class="hint"><span id="charCount">0</span>/100 characters</small>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="submitBtn">
+                        <span class="btn-text">Get Cat 🎉</span>
+                        <span class="btn-loader hidden">Loading...</span>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <section class="display-section">
+            <div id="loadingState" class="state hidden">
+                <div class="spinner"></div>
+                <p>Fetching your cat...</p>
+            </div>
+
+            <div id="errorState" class="state hidden">
+                <div class="error-icon">⚠️</div>
+                <p id="errorMessage"></p>
+                <button class="btn btn-secondary" onclick="document.getElementById('errorState').classList.add('hidden')">
+                    Close
+                </button>
+            </div>
+
+            <div id="successState" class="state hidden">
+                <div class="cat-container">
+                    <img id="catImage" src="" alt="Cat with message" class="cat-image">
+                </div>
+                <div class="cat-info">
+                    <p class="cat-tag" id="displayTag"></p>
+                </div>
+            </div>
+
+            <div id="emptyState" class="state">
+                <div class="empty-icon">🐱</div>
+                <p>Fill in the form and click "Get Cat" to see your custom cat image!</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Made with ❤️ for cat lovers using <a href="https://cataas.com/" target="_blank">CataaS API</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
